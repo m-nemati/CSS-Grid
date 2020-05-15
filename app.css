@@ -1,0 +1,245 @@
+
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&family=Supermercado+One&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'vazir', sans-serif;
+    direction: rtl;
+}
+
+h1, h2 {
+    font-family: 'B Titer', sans-serif;
+    margin-bottom: 1rem;
+}
+
+p {
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    text-indent: 3.125rem;
+}
+
+img {
+    display: block;
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: lightgray;
+    margin: 20px auto;
+    transition: 0.3s;
+}
+
+img:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.site > * {
+    /* border: 1px solid black; */
+    padding: 20px;
+}
+
+.site {
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 100vh auto auto;
+    grid-template-areas: "header header"
+                        "nav main"
+                        "footer footer";
+}
+
+@media screen and (max-width: 900px) {
+    .site {
+        grid-template-columns: auto;
+        grid-template-rows: 100vh repeat(3, auto);
+        grid-template-areas: "header"
+                            "main"
+                            "nav"
+                            "footer";
+    }
+
+    img {
+        width: 75%;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .site {
+        grid-template-rows: 500px auto;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    grid-area: header;
+    position: relative;
+    font-family: 'El Messiri', sans-serif;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                     url('images/fall.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 40px;
+}
+/* 
+.header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: url('images/fall.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    background-attachment: fixed;
+} */
+
+.logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: yellow;
+    text-shadow: 0 0 3px rgb(10, 194, 10);
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+
+    list-style-type: none;
+    width: 50%;
+}
+
+.menu li {
+    width: 25%;
+    margin: 10px;
+    box-shadow: 0 0 2px red;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.menu li a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.25rem;
+    color: white;
+    border: 1px solid wheat;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    background-color: rgba(72, 221, 26, 0.425);
+}
+
+.login a {
+    display: block;
+    padding: 12px 15px;
+    background-color:rgba(228, 231, 40, 0.692);
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+    border-radius: 2px;
+    transition: 0.3s;
+    font-family: 'Supermercado One', cursive;
+}
+
+.login a:hover {
+    background-color: rgba(235, 39, 39, 0.699);
+}
+
+@media screen and (max-width: 900px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 13px;
+    }
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        min-width: 150px;
+    }
+}
+
+.main {
+    grid-area: main;
+    background-color: rgb(230, 230, 230);
+    padding: 2rem;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: white;
+    padding: 50px 0;
+}
+
+.nav ul {
+    list-style-type: none;
+}
+
+.nav ul li a{
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 5px;
+    color: coral;
+    font-size: 1.25rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.nav ul li a:hover {
+    background-color: rgba(85, 64, 64, 0.2);
+}
+.footer {
+    font-family: 'El Messiri', sans-serif;
+    grid-area: footer;
+    background-color: rgb(27, 27, 27);
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    padding: 150px 0;
+}
+
+.footer .social {
+    text-align: center;
+    color: red;
+}
+
+.footer i {
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.footer i:hover {
+    transform: scale(1.5);
+}
